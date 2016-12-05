@@ -9,7 +9,7 @@ html(lang='ru')
         title mailservice
     body
         header.header
-            object.logo(type="image/svg+xml" data="logo.svg" class="logo" style="width: 6%; height: auto; margin-left: 4%")
+            object.logo(type="image/svg+xml" data="svg/logo.svg" class="logo" style="width: 6%; height: auto; margin-left: 4%")
         nav.navigation
             ul.navigation__list
                 li.navigation__item
@@ -26,13 +26,56 @@ html(lang='ru')
                         span.navigation__link__text_active Ответы
         main.answers
             div.answers__mail
-                div.answers__name
-                div.answers__delete-mail
-                div.answers__counter
+                div#answer-number.answers__number #1
+                div#answer-name.answers__name
+                    span Первое письмо с длинным названием
+                div#answer-delete.answers__delete-mail
+                div#answer-counter.answers__counter 999
+                    object.logo(type="image/svg+xml" data="svg/close-envelope.svg" class="logo"
+                        style="width: 1.6vmax; height: auto; margin-left: 0.2rem")
+
+            //ДАЛЕЕ ИДУТ ПОВТОРЫ БЛОКА .ANSWER__MAIL ДЛЯ НАГЛЯДНОСТИ//
+
             div.answers__mail
+                div#answer-name.answers__name
+                    span Второе письмо с очень-очень длинным названием
+                div#answer-delete.answers__delete-mail
+                div#answer-counter.answers__counter 123
+                    object.logo(type="image/svg+xml" data="svg/close-envelope.svg" class="logo"
+                        style="width: 1.6vmax; height: auto; margin-left: 0.2rem")
             div.answers__mail
+                div#answer-name.answers__name
+                    span фывафывафафваывафывафыв
+                div#answer-delete.answers__delete-mail
+                div#answer-counter.answers__counter 99
+                    object.logo(type="image/svg+xml" data="svg/close-envelope.svg" class="logo"
+                    style="width: 1.6vmax; height: auto; margin-left: 0.2rem")
             div.answers__mail
+                div#answer-name.answers__name
+                    span 12312331241234dfvsdfv
+                div#answer-delete.answers__delete-mail
+                div#answer-counter.answers__counter 9
+                    object.logo(type="image/svg+xml" data="svg/close-envelope.svg" class="logo"
+                    style="width: 1.6vmax; height: auto; margin-left: 0.2rem")
             div.answers__mail
+                div#answer-name.answers__name
+                    span FUCK U
+                div#answer-delete.answers__delete-mail
+                div#answer-counter.answers__counter 123
+                    object.logo(type="image/svg+xml" data="svg/close-envelope.svg" class="logo"
+                    style="width: 1.6vmax; height: auto; margin-left: 0.2rem")
             div.answers__mail
+                div#answer-name.answers__name
+                    span sasg45g4thsdh45h
+                div#answer-delete.answers__delete-mail
+                div#answer-counter.answers__counter 123
+                    object.logo(type="image/svg+xml" data="svg/close-envelope.svg" class="logo"
+                    style="width: 1.6vmax; height: auto; margin-left: 0.2rem")
             div.answers__mail
+                div#answer-name.answers__name
+                    span Не стоит встревать в эту тему
+                div#answer-delete.answers__delete-mail
+                div#answer-counter.answers__counter 123
+                    object.logo(type="image/svg+xml" data="svg/close-envelope.svg" class="logo"
+                    style="width: 1.6vmax; height: auto; margin-left: 0.2rem")
         footer.footer

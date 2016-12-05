@@ -50,6 +50,7 @@ body
   align-items: center
   align-content: flex-start
   padding: 2vmax
+  width: 18vmax
   height: 100vh - 2*$header-height
   background-color: $blue
 .navigation__list
@@ -169,19 +170,49 @@ body
   flex-flow: column nowrap
   justify-content: flex-start
   align-items: flex-start
-  width: 60vw
-  height: 100vh - 2*$header-height -10vh
-  background-color: white
+  width: 82vw
+  height: 100vh - 2*$header-height //-10vh
+  background-color: $light
   overflow-y: scroll
-  border: 3px dashed #3295d7
-  margin-left: 2vmax
-  margin-top: 2vmax
+  padding: 2rem
+  //border: 3px dashed $blue2
 .answers__mail
-  width: 50%
+  display: inline-flex
+  justify-content: flex-end
+  flex-flow: row nowrap
+  align-items: center
+  width: 60vw
   height: 5rem
-  background-color: #3295d7
+  background-color: $light
   margin-bottom: 1vmax
   flex-shrink: 0
+  box-sizing: border-box
+  border: 1px solid $blue2
+.answers__counter
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 5rem
+  width: 5rem
+  box-sizing: border-box
+  background-color: $blue2
+  text-align: center
+  color: white
+  font-size: 1rem
+.answers__name
+  display: flex
+  font-weight: bold
+  justify-content: center
+  align-items: center
+  align-content: center
+  color: $blue2
+  width: calc(100% - 5rem)
+.answers__number
+  display:
+
+
+
+
 
 
 
