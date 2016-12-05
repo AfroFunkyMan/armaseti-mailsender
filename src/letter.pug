@@ -1,0 +1,33 @@
+doctype html
+html(lang='ru')
+    head
+        meta(charset="utf-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=yes')
+        link(rel='shortcut icon', href='favicon.png')
+        link(rel='stylesheet', href='/style.css')
+        title mailservice
+    body
+        header.header
+            object.logo(type="image/svg+xml" data="logo.svg" class="logo" style="width: 6%; height: auto; margin-left: 4%")
+        nav.navigation
+            ul.navigation__list
+                li.navigation__item
+                    a.navigation__link_color_white(href="import.html")
+                        span ■  
+                        span Импорт подписчиков
+                li.navigation__item
+                    a.navigation__link_color_white(href="letter.html")
+                        span ■  
+                        span.navigation__link__text_active Письмо
+                li.navigation__item
+                    a.navigation__link_color_white(href="answers.html")
+                        span ■  
+                        span Ответы
+        main.letter
+            span.letter__title Вставить код письма
+            form
+                span.letter__description Введите HTML-код
+                textarea.letter__textarea(required)
+                input.letter__submit(type="submit")
+        footer.footer
