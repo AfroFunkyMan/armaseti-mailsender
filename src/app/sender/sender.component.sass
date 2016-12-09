@@ -1,0 +1,26 @@
+@import ../var
+@import ../import/import.component.sass
+
+//SENDER================================================================================================================
+.sender
+  @extend .import
+  flex-flow: column wrap
+  justify-content: flex-start
+.sender__title
+  @extend .import__title
+.sender__recip-number
+  margin-bottom: 1rem
+.sender__letter-name
+  display: block
+  width: 100%
+  margin-bottom: 1rem
+  border: 1px solid $blue2
+.sender__email-subject
+  @extend .sender__letter-name
+.sender__from-name
+  @extend .sender__letter-name
+.sender__from-address
+  @extend .sender__letter-name
+
+form
+  width: 50%

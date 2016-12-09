@@ -1,9 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
 node_modules/
-dist/*.html
-dist/*.css
-dist/*.css.map
+src/**/*.html
+src/**/*.css
+src/**/*.css.map
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output

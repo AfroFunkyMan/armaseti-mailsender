@@ -1,0 +1,45 @@
+@import app/var
+
+//ROOT==================================================================================================================
+html
+  font-size: 1vmax
+body
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  align-items: flex-start
+  align-content: space-between
+  font-family: arial, helvetica, sans-serif
+  margin: 0
+  height: 100vh
+  background-color: $light
+app-root
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: flex-start
+  align-content: center
+
+
+//HEADER================================================================================================================
+.header
+  box-sizing: border-box
+  width: 100%
+  height: $header-height
+  background-color: $dark
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  align-items: center
+
+
+//FOOTER================================================================================================================
+.footer
+  @extend .header
+  border-bottom: none
+  border-top: 1px dashed $dark
+
+
+
+
+
