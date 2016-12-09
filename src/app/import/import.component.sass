@@ -1,0 +1,78 @@
+@import ../var
+
+//IMPORT================================================================================================================
+.import
+  box-sizing: border-box
+  height: 100vh - 2*$header-height
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  align-items: center
+  align-content: flex-start
+  width: 64vw
+  padding: 2rem
+  background-color: $light
+.import__title
+  text-align: center
+  width: 100%
+  display: block
+  font-size: 1.6rem
+  margin-bottom: 2rem
+.import__description
+  display: block
+  width: 100%
+  margin-bottom: 1rem
+.import__fileform
+  @extend .import__description
+  background-color: #FFFFFF
+  border: 1px solid $blue2
+  height: 1.6rem
+  overflow: hidden
+  position: relative
+  width: 40vw
+  //text-align: left
+#fileformlabel
+  background-color: #FFFFFF
+  float: left
+  height: 100%
+  line-height: 22px
+  overflow: hidden
+  padding: 2px
+  text-align: left
+  vertical-align: middle
+  width: 67%
+.import__select-button
+  background-color: $blue2
+  color: #FFFFFF
+  font-size: 1rem
+  height: 100%
+  line-height: 1.2rem
+  overflow: hidden
+  padding: 2px 6px
+  text-align: center
+  min-width: 12%
+  float: right
+@supports not (opacity: 0)
+  .import__upload
+    filter: alpha(opacity=0)
+.import__upload
+  position: absolute
+  left: 0px
+  float: left
+  width: 100%
+  height: 100%
+  z-index: 20
+  border: 1px solid white
+  color: white
+  background-color: white
+.import__submit
+  background-color: $red
+  color: #FFFFFF
+  font-size: 1rem
+  height: 2rem
+  line-height: 1.2rem
+  overflow: hidden
+  padding: 2px 6px
+  text-align: center
+  min-width: 25%
+  border: none

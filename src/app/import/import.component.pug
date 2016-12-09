@@ -1,0 +1,9 @@
+main.import
+   span.import__title Добавить адреса в базу
+   form
+       span.import__description Выберете файл формата CSV
+       div.import__fileform
+           div#fileformlabel
+           div.import__select-button Обзор
+           input#upload.import__upload(type="file" required name="upload" onchange="getName(this.value);" accept=".csv" style="opacity: 0")
+       input.import__submit(type="submit")

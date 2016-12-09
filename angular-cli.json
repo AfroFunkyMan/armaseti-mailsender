@@ -41,7 +41,7 @@
     }
   },
   "defaults": {
-    "styleExt": "sass",
+    "styleExt": "css",
     "prefixInterfaces": false,
     "inline": {
       "style": false,

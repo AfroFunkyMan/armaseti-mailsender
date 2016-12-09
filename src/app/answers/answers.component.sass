@@ -1,0 +1,43 @@
+@import ../var
+//@import ../import/import.component
+
+//ANSWERS===============================================================================================================
+.answers
+  //@extend .import
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: flex-start
+  background-color: $light
+  overflow-y: scroll
+  padding: 2rem
+.answers__mail
+  display: inline-flex
+  justify-content: flex-end
+  flex-flow: row nowrap
+  align-items: center
+  width: 60vw
+  height: 5rem
+  background-color: $light
+  margin-bottom: 1vmax
+  flex-shrink: 0
+  box-sizing: border-box
+  border: 1px solid $blue2
+.answers__counter
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 5rem
+  width: 5rem
+  box-sizing: border-box
+  background-color: $blue2
+  text-align: center
+  color: white
+  font-size: 1rem
+.answers__name
+  display: flex
+  font-weight: bold
+  justify-content: center
+  align-items: center
+  align-content: center
+  color: $blue2
+  width: calc(100% - 5rem)

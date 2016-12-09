@@ -1,2 +1,2 @@
-
+.nav{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-flow:column wrap;flex-flow:column wrap;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-line-pack:start;align-content:flex-start;padding:2vmax;width:18vmax;height:80vh;background-color:#237bb3}.nav__list{list-style-type:none;padding:0}.nav__item{margin-bottom:16px}.nav__link_white{font-size:16px;font-weight:700;color:#fff;text-decoration:none}.navigation__link__text_active{border-bottom:1px dashed #fff}
 /*# sourceMappingURL=app.component.css.map */
