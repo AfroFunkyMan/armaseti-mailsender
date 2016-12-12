@@ -12,7 +12,7 @@
   margin-bottom: 1rem
 .sender__letter-name
   display: block
-  width: 100%
+  width: 80%
   margin-bottom: 1rem
   border: 1px solid $blue2
 .sender__email-subject
@@ -21,6 +21,13 @@
   @extend .sender__letter-name
 .sender__from-address
   @extend .sender__letter-name
+.sender__send-buttom
+  @extend .import__submit
 
 form
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-content: center
+  align-items: center
   width: 50%
