@@ -26,15 +26,32 @@ app-root
   box-sizing: border-box
   width: 100%
   height: $header-height
-  background-color: $dark
+  background-color: $blue2
   display: flex
   flex-flow: row wrap
   justify-content: flex-start
   align-items: center
+  //border-bottom: 1px solid $blue2
+.header__red-element
+  width: 4.7%
+  height: 10vh
+  background-color: $red
+  position: absolute
+  z-index: 0
+.header__red-element2
+  left: 4.7%
+  position: absolute
+  z-index: 0
+  width: 0
+  height: 0
+  border-top: 10vh solid $red
+  border-right: 10vh solid transparent
+.logo
+  z-index: 1
 
 
 //FOOTER================================================================================================================
-.footer
+//.footer
   @extend .header
   border-bottom: none
   border-top: 1px dashed $dark

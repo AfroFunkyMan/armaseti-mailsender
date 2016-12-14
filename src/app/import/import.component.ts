@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./import.component.css']
 })
 export class ImportComponent implements OnInit {
- filename="etrtret";
+ filename="";
   constructor() { }
 
   ngOnInit() {

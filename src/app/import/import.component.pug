@@ -6,8 +6,11 @@ main.import
            div#fileformlabel {{filename}}
            div.import__select-button Обзор
            input#import.import__upload(type="file"
-                                        required name="upload"
-                                        [(ngModel)]="name.value"
-                                        accept=".csv"
-                                        style="opacity: 0")
+                                       required
+                                       name="upload"
+                                       [(ngModel)]="name.value"
+                                       accept=".csv"
+                                       style="opacity: 0"
+                                       )
+           //TODO не работает отображение пути до фаила при импорте
        input.import__submit(type="submit")
