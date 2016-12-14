@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./import.component.css']
 })
 export class ImportComponent implements OnInit {
-
+ filename="etrtret";
   constructor() { }
 
   ngOnInit() {
   }
-
+  getName (str){
+    let i;
+    if (str.lastIndexOf('\\')){
+       i = str.lastIndexOf('\\')+1;
+    }
+    else{
+       i = str.lastIndexOf('/')+1;
+    }
+    this.filename = str.slice(i);
+  }
 }
