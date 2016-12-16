@@ -2,47 +2,21 @@ main.start(style="margin-left: 33%")
   div.import
 
     form
-      h2.import__title Добавить адреса в базу
-      span.import__description Выберете файл формата CSV
-      br
-      input.import__upload(type="file"
+      h2.import__title Кому
+      input.import__upload(type="text"
                            required
-                           name="upload"
-                           accept=".csv"
                            )
       br
-      h2.letter__title Вставить код письма
-      span.letter__description Введите HTML-код
-      br
-      input.letter__textarea(type="file"
-                             accept=".html"
+      h2.letter__title Тело письма
+      input.letter__textarea(type="text"
                              required
                              )
       br
-
-    form
-      h2.sender__title Заполнить оставшиеся поля
-      input.sender__letter-name(type="text"
-                                placeholder="Имя письма"
-                                maxlength="100"
-                                value="TEST"
-                                )
-      br
+      h2.sender__title Тема письма
       input.sender__email-subj(type="text"
                                placeholder="Тема письма"
                                maxlength="150"
                                value="Тестовое письмо"
                                )
       br
-      input.sender__from-name(type="text"
-                              placeholder="Имя отправителя"
-                              maxlength="100"
-                              value="Отправитель"
-                              )
-      br
-      input.sender__from-addr(type="email"
-                              placeholder="Адрес отправителя"
-                              value="martyns0n@notany-dev.ru"
-                              )
-      br
-      button.sender__send-buttom Разослать
+      input.sender__send-buttom(type="submit") Разослать
