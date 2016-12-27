@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"start.component.css","sourcesContent":[]}
+{"version":3,"sources":["app/start/start.component.sass"],"names":[],"mappings":"AAAA,OAEE,iBAAmB,CAAG","file":"start.component.css","sourcesContent":[".start {\n  //@extend .import\n  overflow-y: scroll; }\n"]}

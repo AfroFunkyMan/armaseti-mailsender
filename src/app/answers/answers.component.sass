@@ -2,35 +2,28 @@
 @import ../import/import.component.sass
 
 //ANSWERS===============================================================================================================
-.answers
+.block-list
   @extend .import
   justify-content: flex-start
   flex-flow: column nowrap
   overflow-y: scroll
-.answers__mail
-  display: inline-flex
-  justify-content: flex-end
+.block-list__item
+  display: flex
+  justify-content: space-between
   flex-flow: row nowrap
   align-items: center
   width: 100%
-  height: 4rem
-  background-color: $light
-  margin-bottom: 1rem
+  min-height: 3rem
   flex-shrink: 0
-  box-sizing: border-box
-  border: 1px solid $blue2
-.answers__counter
-  display: flex
-  justify-content: center
+  padding: 1rem
+  color: $dark
+  font-size: 1.6rem
+  margin-bottom: 1rem
+.block-list__item__counter
+  display: inline-flex
   align-items: center
-  height: 4rem
-  width: 4rem
-  box-sizing: border-box
-  background-color: $blue2
-  text-align: center
-  color: white
   font-size: 1rem
-.answers__name
+//.answers__name
   display: flex
   font-weight: bold
   justify-content: center
