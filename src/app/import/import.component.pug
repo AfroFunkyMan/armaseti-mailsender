@@ -1,8 +1,19 @@
 main.import
-   span.import__title Добавить адреса в базу
-   form
-       span.import__description Выберете файл формата CSV
-       div.import__fileform
+    span.import__title Добавить адреса в базу
+    form
+        div.mdl-textfield.mdl-js-textfield.mdl-textfield--file
+            input.mdl-textfield__input(placeholder="File" type="text" id="uploadFile" readonly)
+            div.mdl-button.mdl-button--primary.mdl-button--icon.mdl-button--file
+                i.material-icons attach_file
+                input#uploadBtn(type="file")
+    script.
+        document.getElementById("uploadBtn").onchange = function () {
+            document.getElementById("uploadFile").value = this.files[0].name;
+        };
+    br
+    form
+        span.import__description Выберете файл формата CSV
+        div.import__fileform
            div#fileformlabel {{filename}}
            button.import__select-button Обзор
            input#import.import__upload(type="file"
@@ -12,5 +23,6 @@ main.import
                                        accept=".csv"
                                        style="opacity: 0"
                                        )
+
            //TODO не работает отображение пути до фаила при импорте
-       button.import__submit Следующий шаг
+        button.import__submit Следующий шаг

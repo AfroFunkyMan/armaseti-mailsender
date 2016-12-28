@@ -2,8 +2,8 @@
 
 //ROOT==================================================================================================================
 html
-  font-family: Roboto, sans-serif
-  font-size: 1vmax
+  font-family: $font
+  font-size: $font-size
   color: $dark
 body
   display: flex
@@ -27,12 +27,6 @@ app-root
   box-sizing: border-box
   width: 100%
   height: $header-height
-  background-color: $blue2
-  display: flex
-  flex-flow: row wrap
-  justify-content: flex-start
-  align-items: center
-  //border-bottom: 1px solid $blue2
 .header__red-element
   width: 4.7%
   height: 10vh
@@ -51,11 +45,7 @@ app-root
   z-index: 1
 
 
-//FOOTER================================================================================================================
-//.footer
-  @extend .header
-  border-bottom: none
-  border-top: 1px dashed $dark
+
 
 
 

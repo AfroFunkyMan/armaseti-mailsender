@@ -1,30 +1,6 @@
-//nav.nav
-  ul.nav__list
-    li.nav__item
-      a.nav__link_white(routerLink='/start/', routerLinkActive='active')
-        span ■  
-        span Главная
-    hr(style="border: none; border-top: 1px dashed white;")
-    li.nav__item
-      a.nav__link_white(routerLink='/import/', routerLinkActive='active')
-        span ■  
-        span Импорт подписчиков
-    li.nav__item
-      a.nav__link_white(routerLink='/letter', routerLinkActive='active')
-        span ■  
-        span Письмо
-    li.nav__item
-      a.nav__link_white(routerLink='/sender', routerLinkActive='active')
-        span ■  
-        span Отправка
-    hr(style="border: none; border-top: 1px dashed white;")
-    li.nav__item
-      a.nav__link_white(routerLink='/answers', routerLinkActive='active')
-        span ■  
-        span Ответы
 .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
   header.mdl-layout__header
-    .mdl-layout__header-row
+    .mdl-layout__header-row.header
       // Title
       span.mdl-layout-title
         object.logo(type="image/svg+xml" data="svg/logo.svg" class="logo" style="width: 26%; height: auto; margin-left: 4%;")
@@ -52,3 +28,29 @@
     .page-content
       // Your content goes here
       router-outlet
+
+//СТАРАЯ НАВИГАЦИЯ=====================================================================================================
+//nav.nav
+  ul.nav__list
+    li.nav__item
+      a.nav__link_white(routerLink='/start/', routerLinkActive='active')
+        span ■  
+        span Главная
+    hr(style="border: none; border-top: 1px dashed white;")
+    li.nav__item
+      a.nav__link_white(routerLink='/import/', routerLinkActive='active')
+        span ■  
+        span Импорт подписчиков
+    li.nav__item
+      a.nav__link_white(routerLink='/letter', routerLinkActive='active')
+        span ■  
+        span Письмо
+    li.nav__item
+      a.nav__link_white(routerLink='/sender', routerLinkActive='active')
+        span ■  
+        span Отправка
+    hr(style="border: none; border-top: 1px dashed white;")
+    li.nav__item
+      a.nav__link_white(routerLink='/answers', routerLinkActive='active')
+        span ■  
+        span Ответы
