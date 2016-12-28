@@ -1,17 +1,24 @@
 main.import
-    span.import__title Добавить адреса в базу
-    form
-        div.mdl-textfield.mdl-js-textfield.mdl-textfield--file
-            input.mdl-textfield__input(placeholder="File" type="text" id="uploadFile" readonly)
-            div.mdl-button.mdl-button--primary.mdl-button--icon.mdl-button--file
-                i.material-icons attach_file
-                input#uploadBtn(type="file")
-    script.
-        document.getElementById("uploadBtn").onchange = function () {
-            document.getElementById("uploadFile").value = this.files[0].name;
-        };
-    br
-    form
+  .mdl-card.mdl-shadow--2dp
+    .mdl-card__title.mdl-card--border
+      h1.mdl-card__title-text Добавить адреса в базу
+    form.block-form
+      .mdl-textfield.mdl-js-textfield.mdl-textfield--file
+        input.mdl-textfield__input#uploadFile(placeholder="Загрузите CSV-файл" type="text" readonly)
+        .mdl-button.mdl-button--primary.mdl-button--icon.mdl-button--file
+          i.material-icons file_upload
+          input#uploadBtn(type="file"
+                          required
+                          accept=".csv"
+                          style="opacity: 0"
+                          )
+        //^КОСТЫЛЬ! Свойство opacity не работает через дискретный CSS (?)
+      a(href="#")
+          button.mdl-button.mdl-js-button.mdl-button--accent
+            | Следующий шаг
+
+    //СТАРАЯ ФОРМА
+    //form
         span.import__description Выберете файл формата CSV
         div.import__fileform
            div#fileformlabel {{filename}}
