@@ -1,0 +1,34 @@
+@import ../var
+@import ../import/import.component.sass
+
+//ANSWERS===============================================================================================================
+.block-list
+  @extend .import
+  height:
+  flex-flow: column nowrap
+  overflow-y: scroll
+  align-items: center
+.block-list__item
+  display: flex
+  justify-content: space-between
+  flex-flow: row nowrap
+  align-items: center
+  width: 80%
+  min-height: 3rem
+  flex-shrink: 0
+  padding: 1rem
+  color: $dark
+  font-size: 1.6rem
+  margin-bottom: 1rem
+.block-list__item__counter
+  display: inline-flex
+  align-items: center
+  font-size: 1rem
+//.answers__name
+  display: flex
+  font-weight: bold
+  justify-content: center
+  align-items: center
+  align-content: center
+  color: $blue2
+  width: calc(100% - 4rem)
