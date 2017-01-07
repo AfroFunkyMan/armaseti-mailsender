@@ -3,26 +3,58 @@
 //IMPORT================================================================================================================
 .import
   box-sizing: border-box
-  height: 100vh - $header-height
+  //height: calc(100vh - 4vmax)
   display: flex
   flex-flow: row wrap
   justify-content: center
-  align-items: center
-  align-content: flex-start
-  width: 64vw
+  align-items: flex-start
+  width: 100vw
   padding: 2rem
-  background-color: $light
-.import__title
+  font-family: $font
+.mdl-card
+    width: auto
+    max-width: 32vw
+.block-form
+    display: flex
+    flex-flow: row wrap
+    padding: 1rem
+.mdl-card__supporting-text
+  padding: 1rem 1rem 0 1rem
+
+
+
+//CUSTOM-MDL FILE-FORM========================================================================================================
+.mdl-button--file
+    input
+        cursor: pointer
+        height: 100%
+        right: 0
+        position: absolute
+        top: 0
+        width: 300px
+        z-index: 4
+.mdl-textfield
+    min-width: 30vmax
+.mdl-textfield--file >
+    .mdl-textfield__input
+        box-sizing: border-box
+        width: calc(100% - 32px)
+    .mdl-button--file
+        right: 0
+
+
+//OLD FORM CLASSES======================================================================================================
+//.import__title
   text-align: center
   width: 100%
   display: block
   font-size: 1.6rem
   margin-bottom: 2rem
-.import__description
+//.import__description
   display: block
   width: 100%
   margin-bottom: 1rem
-.import__fileform
+//.import__fileform
   @extend .import__description
   background-color: #FFFFFF
   border: 1px solid $blue2
@@ -31,7 +63,7 @@
   position: relative
   width: 40vw
   //text-align: left
-#fileformlabel
+//#fileformlabel
   background-color: #FFFFFF
   float: left
   height: 100%
@@ -41,7 +73,7 @@
   text-align: left
   vertical-align: middle
   width: 85%
-.import__select-button
+//.import__select-button
   background-color: $blue2
   color: #FFFFFF
   font-size: 1rem
@@ -51,7 +83,7 @@
   padding-right: 1vmax
   float: right
   border: none
-.import__upload
+//.import__upload
   position: absolute
   left: 0px
   float: left
@@ -61,7 +93,7 @@
   border: 1px solid white
   color: white
   background-color: white
-.import__submit
+//.import__submit
   background-color: $red
   color: #FFFFFF
   font-size: 0.9rem
@@ -71,3 +103,5 @@
   border: none
   padding-left: 1vmax
   padding-right: 1vmax
+
+

@@ -1,4 +1,36 @@
-nav.nav
+.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+  header.mdl-layout__header
+    .mdl-layout__header-row.header
+      // Title
+      span.mdl-layout-title
+        object.logo(type="image/svg+xml" data="svg/logo.svg" class="logo" style="width: 26%; height: auto;")
+      // Add spacer, to align navigation to the right
+      .mdl-layout-spacer
+      // Navigation. We hide it in small screens.
+      nav.mdl-navigation.mdl-layout--large-screen-only
+        a.mdl-navigation__link(routerLink='/start/', routerLinkActive='active') Главная
+        span |
+        a.mdl-navigation__link(routerLink='/import/', routerLinkActive='active') Импорт
+        span >
+        a.mdl-navigation__link(routerLink='/letter/', routerLinkActive='active') Письмо
+        span >
+        a.mdl-navigation__link(routerLink='/sender/', routerLinkActive='active') Отправка
+        span |
+        a.mdl-navigation__link(routerLink='/answers/', routerLinkActive='active') Ответы
+  .mdl-layout__drawer
+    span.mdl-layout-title Title
+    nav.mdl-navigation
+      a.mdl-navigation__link(href='') Рассылки
+      a.mdl-navigation__link(href='') Личный кабинет
+      a.mdl-navigation__link(href='') Заявки
+      a.mdl-navigation__link(href='') Link
+  main.mdl-layout__content
+    .page-content
+      // Your content goes here
+      router-outlet
+
+//СТАРАЯ НАВИГАЦИЯ=====================================================================================================
+//nav.nav
   ul.nav__list
     li.nav__item
       a.nav__link_white(routerLink='/start/', routerLinkActive='active')
@@ -22,4 +54,3 @@ nav.nav
       a.nav__link_white(routerLink='/answers', routerLinkActive='active')
         span ■  
         span Ответы
-router-outlet

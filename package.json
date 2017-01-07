@@ -1,33 +1,21 @@
 {
-  "name": "armaseti-mail-service",
-  "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
+  "name": "armaseti-mailsender",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "gulp": "gulp",
-    "start": "ng serve",
-    "lint": "tslint \"src/**/*.ts\"",
-    "test": "ng test",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "start": "node ./bin/www"
   },
-  "author": "Ruslan Zhubanishchev",
-  "license": "ISC",
   "dependencies": {
-    "@angular/common": "2.2.1",
-    "@angular/compiler": "2.2.1",
-    "@angular/core": "2.2.1",
-    "@angular/forms": "2.2.1",
-    "@angular/http": "2.2.1",
-    "@angular/platform-browser": "2.2.1",
-    "@angular/platform-browser-dynamic": "2.2.1",
-    "@angular/router": "3.2.1",
-    "core-js": "^2.4.1",
-    "material-components-web": "^0.1.1",
-    "material-design-lite": "^1.2.1",
-    "rxjs": "5.0.0-beta.12",
-    "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.23"
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "morgan": "~1.7.0",
+    "nodemailer": "^2.7.0",
+    "nodemailer-ses-transport": "^1.5.0",
+    "pug": "~2.0.0-beta6",
+    "serve-favicon": "~2.3.0",
+    "socket.io": "^1.7.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
@@ -59,6 +47,20 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
-    "webdriver-manager": "10.2.5"
+    "webdriver-manager": "10.2.5",
+    "@angular/common": "2.2.1",
+    "@angular/compiler": "2.2.1",
+    "@angular/core": "2.2.1",
+    "@angular/forms": "2.2.1",
+    "@angular/http": "2.2.1",
+    "@angular/platform-browser": "2.2.1",
+    "@angular/platform-browser-dynamic": "2.2.1",
+    "@angular/router": "3.2.1",
+    "core-js": "^2.4.1",
+    "material-components-web": "^0.1.1",
+    "material-design-lite": "^1.2.1",
+    "rxjs": "5.0.0-beta.12",
+    "ts-helpers": "^1.1.1",
+    "zone.js": "^0.6.23"
   }
 }

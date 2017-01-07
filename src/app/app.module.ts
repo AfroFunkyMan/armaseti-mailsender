@@ -11,7 +11,7 @@ import { AnswersComponent } from './answers/answers.component';
 import { SenderComponent } from './sender/sender.component';
 
 const appRoutes: Routes = [
-  { path: '', component: StartComponent },
+  { path: 'start', component: StartComponent },
   { path: 'import', component: ImportComponent },
   { path: 'letter', component: LetterComponent },
   { path: 'sender', component: SenderComponent },
