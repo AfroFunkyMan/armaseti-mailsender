@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocketsService } from '../service/sockets.service';
 
 @Component({
   templateUrl: './start.component.html',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private socketsService: SocketsService) {}
 
   ngOnInit() {
   }

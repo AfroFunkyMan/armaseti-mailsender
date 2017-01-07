@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "public/app",
+      "outDir": "public",
       "assets": [
         "assets",
         "favicon.ico"
@@ -20,7 +20,7 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": ["../node_modules/socket.io-client/dist/socket.io.js"],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

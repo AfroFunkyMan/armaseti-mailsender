@@ -9,6 +9,7 @@ import { ImportComponent } from './import/import.component';
 import { LetterComponent } from './letter/letter.component';
 import { AnswersComponent } from './answers/answers.component';
 import { SenderComponent } from './sender/sender.component';
+import { SocketsService } from './service/sockets.service'
 
 const appRoutes: Routes = [
   { path: 'start', component: StartComponent },
@@ -32,7 +33,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [SocketsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
