@@ -19,12 +19,10 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "libraries/mdl/material.blue-red.min.css"
+        "../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css",
+        "../node_modules/normalize.css/normalize.css"
       ],
-      "scripts": [
-        "../node_modules/socket.io-client/dist/socket.io.js",
-        "libraries/mdl/material.js"
-      ],
+      "scripts": [],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

@@ -3,25 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { CampaignComponent } from './campaign/campaign.component';
 
-const appRoutes: Routes = [
-  { path: '', component: CampaignComponent },
-  { path: 'campaign', component: CampaignComponent },
-];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CampaignComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    MaterialModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

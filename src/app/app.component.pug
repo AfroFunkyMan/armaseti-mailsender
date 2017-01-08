@@ -1,23 +1,13 @@
-header.mdl-layout__header.mdl-color--grey-100.mdl-color-text--grey-600
-    .mdl-layout__header-row
-        span.mdl-layout-title Главная
-.demo-drawer.mdl-layout__drawer.mdl-color--blue-grey-900.mdl-color-text--blue-grey-50
-    header.demo-drawer-header
-        img.demo-avatar(src='images/user.jpg')
-        .demo-avatar-dropdown
-            span Пользователь
-            .mdl-layout-spacer
-    nav.demo-navigation.mdl-navigation.mdl-color--blue-grey-800
-        a.mdl-navigation__link(routerLink="/campaign") Главная
-        a.mdl-navigation__link(href='') Создать Рассылку
-        a.mdl-navigation__link(href='') Ответы
-        a.mdl-navigation__link(href='') Статистика
-        a.mdl-navigation__link(href='') Листы
-        a.mdl-navigation__link(href='') Шаблоны
-        a.mdl-navigation__link(href='') Расписания
-        .mdl-layout-spacer
-        a.mdl-navigation__link(href='')
-            i.mdl-color-text--blue-grey-400.material-icons(role='presentation') help_outline
-            span.visuallyhidden Help
-main.mdl-layout__content.mdl-color--grey-100
-    router-outlet.mdl-grid.demo-content
+    md-sidenav-container
+        md-sidenav(#sidenav='')
+            | Jolly good!
+        md-sidenav-content
+            md-toolbar(color='primary') My App
+                button(md-button='', (click)='sidenav.open()')
+                    | Open sidenav
+        div
+            router-outlet
+            md-list
+                md-list-item  Pepper
+                md-list-item  Salt
+                md-list-item  Paprika
