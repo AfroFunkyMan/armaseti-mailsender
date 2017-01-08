@@ -9,3 +9,13 @@ e2e/*.map
 #System Files
 .DS_Store
 Thumbs.db
+/public/inline.bundle.js
+/public/favicon.ico
+/public/scripts.bundle.js
+/public/index.html
+/public/styles.bundle.js
+/public/main.bundle.js
+/public/main.bundle.map
+/public/scripts.bundle.map
+/public/styles.bundle.map
+/public/inline.bundle.map

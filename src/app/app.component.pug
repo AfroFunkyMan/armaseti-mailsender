@@ -1,56 +1,23 @@
-.mdl-layout.mdl-js-layout.mdl-layout--fixed-header
-  header.mdl-layout__header
-    .mdl-layout__header-row.header
-      // Title
-      span.mdl-layout-title
-        object.logo(type="image/svg+xml" data="svg/logo.svg" class="logo" style="width: 26%; height: auto;")
-      // Add spacer, to align navigation to the right
-      .mdl-layout-spacer
-      // Navigation. We hide it in small screens.
-      nav.mdl-navigation.mdl-layout--large-screen-only
-        a.mdl-navigation__link(routerLink='/start/', routerLinkActive='active') Главная
-        span |
-        a.mdl-navigation__link(routerLink='/import/', routerLinkActive='active') Импорт
-        span >
-        a.mdl-navigation__link(routerLink='/letter/', routerLinkActive='active') Письмо
-        span >
-        a.mdl-navigation__link(routerLink='/sender/', routerLinkActive='active') Отправка
-        span |
-        a.mdl-navigation__link(routerLink='/answers/', routerLinkActive='active') Ответы
-  .mdl-layout__drawer
-    span.mdl-layout-title Title
-    nav.mdl-navigation
-      a.mdl-navigation__link(href='') Рассылки
-      a.mdl-navigation__link(href='') Личный кабинет
-      a.mdl-navigation__link(href='') Заявки
-      a.mdl-navigation__link(href='') Link
-  main.mdl-layout__content
-    .page-content
-      // Your content goes here
-      router-outlet
-
-//СТАРАЯ НАВИГАЦИЯ=====================================================================================================
-//nav.nav
-  ul.nav__list
-    li.nav__item
-      a.nav__link_white(routerLink='/start/', routerLinkActive='active')
-        span ■  
-        span Главная
-    hr(style="border: none; border-top: 1px dashed white;")
-    li.nav__item
-      a.nav__link_white(routerLink='/import/', routerLinkActive='active')
-        span ■  
-        span Импорт подписчиков
-    li.nav__item
-      a.nav__link_white(routerLink='/letter', routerLinkActive='active')
-        span ■  
-        span Письмо
-    li.nav__item
-      a.nav__link_white(routerLink='/sender', routerLinkActive='active')
-        span ■  
-        span Отправка
-    hr(style="border: none; border-top: 1px dashed white;")
-    li.nav__item
-      a.nav__link_white(routerLink='/answers', routerLinkActive='active')
-        span ■  
-        span Ответы
+header.mdl-layout__header.mdl-color--grey-100.mdl-color-text--grey-600
+    .mdl-layout__header-row
+        span.mdl-layout-title Главная
+.demo-drawer.mdl-layout__drawer.mdl-color--blue-grey-900.mdl-color-text--blue-grey-50
+    header.demo-drawer-header
+        img.demo-avatar(src='images/user.jpg')
+        .demo-avatar-dropdown
+            span Пользователь
+            .mdl-layout-spacer
+    nav.demo-navigation.mdl-navigation.mdl-color--blue-grey-800
+        a.mdl-navigation__link(routerLink="/campaign") Главная
+        a.mdl-navigation__link(href='') Создать Рассылку
+        a.mdl-navigation__link(href='') Ответы
+        a.mdl-navigation__link(href='') Статистика
+        a.mdl-navigation__link(href='') Листы
+        a.mdl-navigation__link(href='') Шаблоны
+        a.mdl-navigation__link(href='') Расписания
+        .mdl-layout-spacer
+        a.mdl-navigation__link(href='')
+            i.mdl-color-text--blue-grey-400.material-icons(role='presentation') help_outline
+            span.visuallyhidden Help
+main.mdl-layout__content.mdl-color--grey-100
+    router-outlet.mdl-grid.demo-content
