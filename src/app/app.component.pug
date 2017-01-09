@@ -1,13 +1,9 @@
-    md-sidenav-container
-        md-sidenav(#sidenav='')
-            | Jolly good!
-        md-sidenav-content
-            md-toolbar(color='primary') My App
-                button(md-button='', (click)='sidenav.open()')
-                    | Open sidenav
-        div
-            router-outlet
-            md-list
-                md-list-item  Pepper
-                md-list-item  Salt
-                md-list-item  Paprika
+md-sidenav-container
+    md-sidenav(#sidenav='')
+        | Jolly good!
+    .md-sidenav-content
+        md-toolbar(color='primary')
+            button(md-button='', (click)='sidenav.open()')
+                md-icon menu
+            span My App
+        router-outlet

@@ -5,20 +5,30 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 
+import { AppSocketService } from './app-socket.service';
+
 import { AppComponent } from './app.component';
+import { CampaignComponent } from './campaign/campaign.component';
+
+
+const appRoutes: Routes = [
+  { path: '', component: CampaignComponent },
+];
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CampaignComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AppSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
