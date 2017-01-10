@@ -14,15 +14,18 @@ export class CampaignComponent implements OnInit {
     lists = [
         {
             id: 1,
-            name: 'Item 1'
+            name: 'Список контактов по запорной арматуре',
+            subscribers_number: 0,
         },
         {
             id: 2,
-            name: 'Item 3'
+            name: 'Список контактов по элементам трубопровода',
+            subscribers_number: 0,
         },
         {
             id: 3,
-            name: 'Item 2'
+            name: 'Список контактов по теплообменникам',
+            subscribers_number: 0,
         }
     ];
 
