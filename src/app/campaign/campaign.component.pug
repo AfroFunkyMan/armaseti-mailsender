@@ -1,11 +1,23 @@
-// V TODO Не срабатывает аттрибут тега "[alignTabs]="center"
 md-tab-group(alignTabs="center")
     md-tab(label='Lists')
-        h1 Lists
-        md-card(*ngFor="let list of lists") {{list.id}} {{list.name}} {{list.subscribers_number}}
+        .lists-container
+            md-list
+                h2 Списки подписчиков
+                md-list-item(*ngFor="let list of lists")
+                    md-icon(md-list-avatar) people
+                    h4(md-line) {{list.name}}
+                    p(md-line) {{list.create}}
+                    p(md-line) Кол-во: {{list.subsCount}}
+                    md-checkbox([(ngModel)]="list.checked", (change)="changeEvent(list.id)")
+                md-list-item
+                    p() Суммарно выбрано подписчиков: {{subsCountSum}}
     md-tab(label='Templates')
-        h1 Templates
-        p {{number}}
+        .templates-container
+            md-card( md-raised-button *ngFor="let template of templates")
+                        md-card-title {{template.name}}
+                        md-card-content
+                            .template-preview
+                        md-card-subtitle {{template.create}}
     md-tab(label='Setting')
         h1 Settings
         p ...

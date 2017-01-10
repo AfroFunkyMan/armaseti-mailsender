@@ -1,5 +1,5 @@
 import mongo from 'mongodb';
-enum Rate {
+export enum Rate {
     Low,
     MidLow,
     Mid,
@@ -48,7 +48,8 @@ export interface List {
     rate?: Rate,
     subsCount?: number,
     lastUpdate?: Date,
-    lastUse?: Date;
+    lastUse?: Date
+    checked?: boolean
 }
 
 export interface ListError {
@@ -60,4 +61,10 @@ export interface ListsQuery {
     match?: QueryMatchObject
 }
 
+export interface Templates {
+    id?: number,
+    name: string,
+    create?: Date,
+    lastUpdate?: Date,
 
+}
