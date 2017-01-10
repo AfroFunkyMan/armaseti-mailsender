@@ -1,8 +1,12 @@
 .idea/
 node_modules/
 src/**/*.html
+src/**/*.js
+src/**/*.js.map
 src/**/*.css
 src/**/*.css.map
+mailsender/**/*.js
+mailsender/**/*.js.map
 !src/libraries/mdl/material.blue-red.min.css
 e2e/*.js
 e2e/*.map

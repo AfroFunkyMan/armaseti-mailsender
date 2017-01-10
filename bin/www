@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('armaseti-mailsender:server');
 var http = require('http');
-var sockets = require('../modules/sockets');
+var sockets = require('./sockets');
 /**
  * Get port from environment and store in Express.
  */
