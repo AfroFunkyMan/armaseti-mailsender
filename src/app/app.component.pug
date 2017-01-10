@@ -1,9 +1,8 @@
 md-sidenav-container
     md-sidenav(#sidenav='')
         | Jolly good!
-    .md-sidenav-content
-        md-toolbar(color='primary')
-            button(md-button='', (click)='sidenav.open()')
-                md-icon menu
-            span My App
-        router-outlet
+    md-toolbar(color='primary')
+        button(md-button='', (click)='sidenav.open()')
+            md-icon menu
+        span My App
+    router-outlet
