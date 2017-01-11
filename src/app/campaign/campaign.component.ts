@@ -80,6 +80,15 @@ export class CampaignComponent implements OnInit {
         },0);
     }
 
+
+    setTemplate(template: Templates){
+        this.templates.forEach((templateItem) => {
+           if (templateItem.id !== template.id) templateItem.checked = false;
+           else templateItem.checked = true;
+        });
+
+    }
+
     getLists(): void {
         this.number = this.appSocketService.getLists();
     }
