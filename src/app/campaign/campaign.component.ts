@@ -43,24 +43,28 @@ export class CampaignComponent implements OnInit {
             name: "First template",
             create: new Date,
             lastUpdate: new Date,
+            checked: true,
         },
         {
             id: 2,
             name: "Second template",
             create: new Date,
             lastUpdate: new Date,
+            checked: false,
         },
         {
             id: 3,
             name: "Third template",
             create: new Date,
             lastUpdate: new Date,
+            checked: false,
         },
         {
             id: 4,
             name: "Fourth template",
             create: new Date,
             lastUpdate: new Date,
+            checked: true,
         }
         ];
 

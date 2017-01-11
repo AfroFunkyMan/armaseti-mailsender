@@ -66,5 +66,5 @@ export interface Templates {
     name: string,
     create?: Date,
     lastUpdate?: Date,
-
+    checked?: boolean,
 }

@@ -13,7 +13,12 @@ md-tab-group(alignTabs="center")
                     p() Суммарно выбрано подписчиков: {{subsCountSum}}
     md-tab(label='Templates')
         .templates-container
-            md-card( md-raised-button *ngFor="let template of templates")
+            md-card.md-elevation-z4(
+                                    *ngFor="let template of templates",
+                                    (click)="template.checked = !template.checked",
+                                    [class.md-elevation-z24]="template.checked",
+
+                                    )
                         md-card-title {{template.name}}
                         md-card-content
                             .template-preview
