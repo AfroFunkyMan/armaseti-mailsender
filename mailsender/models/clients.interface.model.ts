@@ -1,5 +1,5 @@
 export interface Client {
-    id: number,
+    _id: number,
     email: string,
     status: Status,
     activities: Activity[]
@@ -26,5 +26,8 @@ enum ActivityAction {
 }
 
 
+export interface ClientQuery {
+    id?: string;
 
+}
 

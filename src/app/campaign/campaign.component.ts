@@ -86,7 +86,6 @@ export class CampaignComponent implements OnInit {
            if (templateItem.id !== template.id) templateItem.checked = false;
            else templateItem.checked = true;
         });
-
     }
 
     getLists(): void {

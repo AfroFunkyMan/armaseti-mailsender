@@ -1,6 +1,6 @@
 import mongo from 'mongodb';
-import { List, ListError,ListsQuery } from '../models/lists.interface.model';
 
+import {List, ListError, ListsQuery, QueryMatchObject, Rate, NewList} from '../models/lists.interface.model';
 
 export class ListsDatabaseService {
     private listsCollection: mongo.Collection;
@@ -23,13 +23,30 @@ export class ListsDatabaseService {
             })
         }
     }
-    getList(query: List): void{
-        this.listsCollection.findOne(query, (err: mongo.MongoError, lists: List) => {
+    getList(query: QueryMatchObject): void{
+        this.listsCollection.findOne(query, (err: mongo.MongoError, list: List) => {
             if (err) return {};
-            return lists;
+            return list;
         });
     }
-    postList(){}
-    updateList(){}
+    postList(list: NewList): void{
+        this.listsCollection.insertOne({
+            name:       list.name,
+            create:     new Date(),
+            rate:       Rate.Low,
+        }, (err: mongo.MongoError, list: List) => {
+            if (err) return {};
+            return list;
+        });
+    }
+    updateList(list: List){
+        let obj = {};
+        for (let key in list) {
+            obj[key] = list[key];
+        }
+        this.listsCollection.updateOne({id : list.id},{
+            $set: obj
+        });
+    }
 
 }

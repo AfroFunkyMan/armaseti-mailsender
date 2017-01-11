@@ -1,4 +1,3 @@
-import mongo from 'mongodb';
 export enum Rate {
     Low,
     MidLow,
@@ -22,7 +21,7 @@ example for 'fields'
      rate: FieldValue.exclude
  }
  */
-interface QueryFieldsObject {
+export interface QueryFieldsObject {
     [name: string]: FieldValue
 }
 
@@ -35,21 +34,23 @@ interface QueryFieldsObject {
      subsCount: { $gte: 1000 }
  }
  */
-interface QueryMatchObject {
-    [name: string]: Object
+export interface QueryMatchObject {
+    [name: string]: any
 }
 
 
+export interface NewList {
+    name: string
+}
 
 export interface List {
-    id: number,
+    id?: string,
     name?: string,
     create?: Date,
     rate?: Rate,
     subsCount?: number,
     lastUpdate?: Date,
     lastUse?: Date
-    checked?: boolean
 }
 
 export interface ListError {
@@ -59,12 +60,4 @@ export interface ListError {
 export interface ListsQuery {
     fields?: QueryFieldsObject,
     match?: QueryMatchObject
-}
-
-export interface Templates {
-    id?: number,
-    name: string,
-    create?: Date,
-    lastUpdate?: Date,
-    checked?: boolean,
 }
