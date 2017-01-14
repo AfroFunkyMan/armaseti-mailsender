@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppSocketService } from '../app-socket.service';
-import { List,Rate,Templates } from '../../../mailsender/models/lists.interface.model';
+import { List, Templates, Rate, Setup } from './campaign.interface.model';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class CampaignComponent implements OnInit {
     subsCountSum: number = 45;
     lists: List[] = [
         {
-            id: 1,
+            _id: 1,
             name: 'Список контактов по запорной арматуре',
             create: new Date,
             rate: Rate.MidHi[Rate.MidHi],
@@ -22,7 +23,7 @@ export class CampaignComponent implements OnInit {
             checked: false
         },
         {
-            id: 2,
+            _id: 2,
             name: 'Список контактов по запорной арматуре',
             create: new Date,
             rate: Rate.MidHi[Rate.MidHi],
@@ -30,7 +31,7 @@ export class CampaignComponent implements OnInit {
             checked: false
         },
         {
-            id: 3,
+            _id: 3,
             name: 'Список контактов по запорной арматуре',
             create: new Date,
             rate: Rate.MidHi[Rate.MidHi],
@@ -39,34 +40,42 @@ export class CampaignComponent implements OnInit {
         }];
     templates: Templates[] = [
         {
-            id: 1,
+            _id: 1,
             name: "First template",
             create: new Date,
             lastUpdate: new Date,
             checked: true,
         },
         {
-            id: 2,
+            _id: 2,
             name: "Second template",
             create: new Date,
             lastUpdate: new Date,
             checked: false,
         },
         {
-            id: 3,
+            _id: 3,
             name: "Third template",
             create: new Date,
             lastUpdate: new Date,
             checked: false,
         },
         {
-            id: 4,
+            _id: 4,
             name: "Fourth template",
             create: new Date,
             lastUpdate: new Date,
             checked: true,
         }
         ];
+    setup: Setup =
+        {
+            letterName: "",
+            letterSubj: "",
+            senderName: "",
+            senderAddr: ""
+        }
+
 
 
     constructor(private appSocketService: AppSocketService ) {
@@ -83,7 +92,7 @@ export class CampaignComponent implements OnInit {
 
     setTemplate(template: Templates){
         this.templates.forEach((templateItem) => {
-           if (templateItem.id !== template.id) templateItem.checked = false;
+           if (templateItem._id !== template._id) templateItem.checked = false;
            else templateItem.checked = true;
         });
     }
@@ -93,6 +102,10 @@ export class CampaignComponent implements OnInit {
     }
     ngOnInit(): void {
         this.getLists();
+    }
+
+    Test() : void {
+        console.log(this.setup.letterName)
     }
 }
 

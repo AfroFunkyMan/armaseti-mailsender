@@ -1,8 +1,8 @@
 md-tab-group(alignTabs="center")
     md-tab(label='Lists')
         .lists-container
+            h2.tab-title Списки подписчиков
             md-list
-                h2 Списки подписчиков
                 md-list-item(*ngFor="let list of lists")
                     md-icon(md-list-avatar) people
                     h4(md-line) {{list.name}}
@@ -13,18 +13,33 @@ md-tab-group(alignTabs="center")
                     p() Суммарно выбрано подписчиков: {{subsCountSum}}
     md-tab(label='Templates')
         .templates-container
-            md-card.md-elevation-z4(
+            h2.tab-title Шаблоны
+            md-card.template-card(
                                     *ngFor="let template of templates",
                                     (click)="setTemplate(template)",
-                                    [class.md-elevation-z24]="template.checked",
+                                    [class.md-elevation-z12]="template.checked",
                                     )
                         md-card-title {{template.name}}
                         md-card-content
                             .template-preview
                         md-card-subtitle {{template.create}}
-    md-tab(label='Setting')
-        h1 Settings
-        p ...
+    md-tab(label='Setup')
+        .setup-container
+            h2.tab-title Настройки
+            md-input(placeholder="Имя письма", [(ngModel)]="setup.letterName")
+            md-input(placeholder="Тема письма", [(ngModel)]="setup.letterSubj")
+            md-input(placeholder="Имя отправителя", [(ngModel)]="setup.senderName")
+            md-input(placeholder="Адрес отправителя", [(ngModel)]="setup.senderAddr")
     md-tab(label='Summary')
-        h1 Summary
-        p ...
+        .summary-container
+            h2.tab-title Суммарно
+            md-card
+                md-card-title Список:
+                md-card-content {{lists[0].name}}
+                md-card-subtitle (Количество получателей: {{subsCountSum}})
+                md-card-title Тема письма:
+                md-card-content {{setup.subj}}
+                md-card-title Шаблон письма:
+                md-card-content {{templates[1].name}}
+                md-card-actions
+                    button(md-raised-button color="primary") Разослать

@@ -1,22 +1,28 @@
-md-list-item
-  height: auto
-  padding: 0.5rem 1rem
+//COMPONENT=============================================================================================================
+.tab-title
+  width: 100vw
+  margin-top: auto
 
 md-tab
   display: flex
   justify-content: center
 
-md-card
-  margin: 2rem
-  max-width: 20vw
 
+//LISTS=================================================================================================================
 .lists-container
   display: flex
   flex-flow: column nowrap
   align-items: center
   align-content: flex-start
   width: 100vw
+  padding: 2rem
 
+md-list-item
+  height: auto
+  padding: 0.5rem 1rem
+
+
+//TEMPLATES=============================================================================================================
 .templates-container
   display: flex
   flex-flow: row wrap
@@ -25,8 +31,38 @@ md-card
   min-height: 50vh
   padding: 2rem
 
-.template-preview
+.template-preview // TODO Класс создающий временную замену превью шаблоны письма, убрать после реализации
   width: 100px
   height: 150px
   background-color: crimson
   margin: auto
+
+.template-card
+  margin: 2rem
+  max-width: 15vw
+
+
+//SETUP=================================================================================================================
+.setup-container
+  @extend .lists-container
+
+md-input
+  width: 40vw
+ 
+
+//SUMMARY===============================================================================================================
+.summary-container
+  @extend .lists-container
+
+
+
+
+
+
+
+
+
+
+
+
+
