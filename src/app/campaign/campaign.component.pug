@@ -14,10 +14,10 @@ md-tab-group(alignTabs="center")
     md-tab(label='Templates')
         .templates-container
             h2.tab-title Шаблоны
-            md-card.template-card(
+            md-card.template-card.md-elevation-z4(
                                     *ngFor="let template of templates",
                                     (click)="setTemplate(template)",
-                                    [class.md-elevation-z12]="template.checked",
+                                    [class.md-elevation-z24]="template.checked",
                                     )
                         md-card-title {{template.name}}
                         md-card-content
@@ -33,13 +33,20 @@ md-tab-group(alignTabs="center")
     md-tab(label='Summary')
         .summary-container
             h2.tab-title Суммарно
-            md-card
-                md-card-title Список:
-                md-card-content {{lists[0].name}}
-                md-card-subtitle (Количество получателей: {{subsCountSum}})
-                md-card-title Тема письма:
-                md-card-content {{setup.subj}}
-                md-card-title Шаблон письма:
-                md-card-content {{templates[1].name}}
+            md-card.summary-card
+                h3 Количество получателей:
+                p.summary-content  {{subsCountSum}}
+                md-divider
+                h3 Список:
+                p.summary-content  "{{lists[0].name}}"
+                md-divider
+                h3 Тема письма:
+                p.summary-content(*ngIf="setup.letterSubj != 0")  "{{setup.letterSubj}}"
+                p.summary-content(*ngIf="setup.letterSubj == 0")
+                    md-icon(color="warn") warning
+                    |  Заполните поле!
+                md-divider
+                h3 Шаблон письма:
+                p.summary-content  "{{templates[1].name}}"
                 md-card-actions
-                    button(md-raised-button color="primary") Разослать
+                    button(md-button color="primary") Разослать

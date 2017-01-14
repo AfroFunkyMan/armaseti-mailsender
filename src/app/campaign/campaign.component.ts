@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 
 export class CampaignComponent implements OnInit {
     public number: number;
-    subsCountSum: number = 45;
+    subsCountSum: number = 0;
     lists: List[] = [
         {
             _id: 1,
