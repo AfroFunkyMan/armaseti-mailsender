@@ -8,7 +8,7 @@ md-tab-group(alignTabs="center")
                     h4(md-line) {{list.name}}
                     p(md-line) {{list.create}}
                     p(md-line) Кол-во: {{list.subsCount}}
-                    md-checkbox([(ngModel)]="list.checked", (change)="changeEvent(list.id)")
+                    md-checkbox([(ngModel)]="list.checked", (change)="selectList(list._id)")
                 md-list-item
                     p() Суммарно выбрано подписчиков: {{subsCountSum}}
     md-tab(label='Templates')
@@ -16,7 +16,7 @@ md-tab-group(alignTabs="center")
             h2.tab-title Шаблоны
             md-card.template-card.md-elevation-z4(
                                     *ngFor="let template of templates",
-                                    (click)="setTemplate(template)",
+                                    (click)="selectTemplate(template)",
                                     [class.md-elevation-z24]="template.checked",
                                     )
                         md-card-title {{template.name}}
@@ -26,10 +26,10 @@ md-tab-group(alignTabs="center")
     md-tab(label='Setup')
         .setup-container
             h2.tab-title Настройки
-            md-input(placeholder="Имя письма", [(ngModel)]="setup.letterName")
-            md-input(placeholder="Тема письма", [(ngModel)]="setup.letterSubj")
-            md-input(placeholder="Имя отправителя", [(ngModel)]="setup.senderName")
-            md-input(placeholder="Адрес отправителя", [(ngModel)]="setup.senderAddr")
+            md-input(placeholder="Название рассылкки", [(ngModel)]="formData.fields.companyName")
+            md-input(placeholder="Тема письма", [(ngModel)]="formData.fields.subject")
+            md-input(placeholder="Имя отправителя", [(ngModel)]="formData.fields.fromName")
+            md-input(placeholder="Адрес отправителя", [(ngModel)]="formData.fields.fromEmail")
     md-tab(label='Summary')
         .summary-container
             h2.tab-title Суммарно
@@ -38,15 +38,17 @@ md-tab-group(alignTabs="center")
                 p.summary-content  {{subsCountSum}}
                 md-divider
                 h3 Список:
-                p.summary-content  "{{lists[0].name}}"
+                ul: li(*ngFor="let list of lists | campaign:true")
+                    p.summary-content {{list.name}}
                 md-divider
                 h3 Тема письма:
-                p.summary-content(*ngIf="setup.letterSubj != 0")  "{{setup.letterSubj}}"
-                p.summary-content(*ngIf="setup.letterSubj == 0")
+                p.summary-content(*ngIf="formData.fields.subject.length > 0")  "{{formData.fields.subject}}"
+                p.summary-content(*ngIf="formData.fields.subject.length === 0")
                     md-icon(color="warn") warning
                     |  Заполните поле!
                 md-divider
                 h3 Шаблон письма:
                 p.summary-content  "{{templates[1].name}}"
-                md-card-actions
-                    button(md-button color="primary") Разослать
+                md-card-actions.summary-card-action_right
+                    button(md-raised-button color="primary", (click)="checkAndSendData()") СОЗДАТЬ РАССЫЛКУ
+                    //button(md-button color="primary") Разослать
