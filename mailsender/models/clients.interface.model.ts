@@ -27,7 +27,11 @@ enum ActivityAction {
 
 
 export interface ClientQuery {
-    id?: string;
+    _id?: string;
 
 }
 
+export interface NewClient {
+    email: string,
+    status: Status,
+}

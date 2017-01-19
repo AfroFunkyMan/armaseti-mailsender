@@ -44,7 +44,7 @@ export interface NewList {
 }
 
 export interface List {
-    id?: string,
+    _id?: string,
     name?: string,
     create?: Date,
     rate?: Rate,

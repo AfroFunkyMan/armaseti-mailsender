@@ -9,7 +9,7 @@ import { AppSocketService } from './app-socket.service';
 
 import { AppComponent } from './app.component';
 import { CampaignComponent } from './campaign/campaign.component';
-
+import { CampaignPipe } from './campaign/campaign.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: CampaignComponent },
@@ -19,7 +19,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CampaignComponent
+    CampaignComponent,
+    CampaignPipe
   ],
   imports: [
     BrowserModule,

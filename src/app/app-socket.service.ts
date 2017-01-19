@@ -11,7 +11,6 @@ export class AppSocketService {
     public number: number = 42;
     constructor() {
         this.socket = IO.connect(this.host);
-        this.socket.on('Test:emit', (number) => this.test(number));
         this.socket.on("connect", () => this.connect());
         this.socket.on("disconnect", () => this.disconnect());
         this.socket.on("error", (error: string) => {
@@ -26,24 +25,16 @@ export class AppSocketService {
         return this.number;
     }
 
-
-
-    //
-    // create(name: string) {
-    //     this.socket.emit("create", name);
-    // }
-    //
-    // // Remove signal
-    // remove(name: string) {
-    //     this.socket.emit("remove", name);
-    // }
+    sendFormData(data){
+        this.socket.emit('data', data);
+    }
 
     // Handle connection opening
     private connect() {
         console.log(`Connected to "${this.host}"`);
 
         // Request initial list when connected
-        this.socket.emit("list");
+        this.test(this.number)
     }
 
     // Handle connection closing

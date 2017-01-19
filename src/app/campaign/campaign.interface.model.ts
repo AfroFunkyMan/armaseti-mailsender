@@ -28,6 +28,19 @@ export enum Rate {
     High,
 }
 
+export interface FormData {
+    lists: [string|number][],
+    template: string|number,
+    fields: {
+        companyName: string,
+        subject: string,
+        fromName: string,
+        fromEmail: string
+    }
+}
+
+
+
 export interface Setup {
     letterName: string,
     letterSubj: string,

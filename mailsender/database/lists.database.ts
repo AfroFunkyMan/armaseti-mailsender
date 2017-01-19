@@ -41,10 +41,13 @@ export class ListsDatabaseService {
     }
     updateList(list: List){
         let obj = {};
+        Object.assign(obj, list);
+
         for (let key in list) {
             obj[key] = list[key];
         }
-        this.listsCollection.updateOne({id : list.id},{
+
+        this.listsCollection.updateOne({_id : list._id},{
             $set: obj
         });
     }
