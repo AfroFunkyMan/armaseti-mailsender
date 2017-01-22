@@ -6,7 +6,7 @@ import * as IO from 'socket.io-client';
 
 @Injectable()
 export class AppSocketService {
-    private host: string = 'http://localhost:3001';
+    private host: string = 'http://prodazha-optom.ru:2563';
     socket;
     public number: number = 42;
     constructor() {
