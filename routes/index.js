@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/unsubscribe/:id', function(req, res, next) {
+    res.render('unsubscribe', { title: 'Express' });
+});
+
+
+
 module.exports = router;
