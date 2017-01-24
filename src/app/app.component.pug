@@ -1,6 +1,10 @@
 md-sidenav-container
     md-sidenav(#sidenav='')
-        | Jolly good!
+        md-list
+            md-list-item: a(routerLink="/") Рассылка
+            md-list-item: a(routerLink="/lists") Настройка списков
+            md-list-item Настройка шаблонов
+            md-list-item Аналитика
     md-toolbar(color='primary')
         button(md-button='', (click)='sidenav.open()')
             md-icon menu

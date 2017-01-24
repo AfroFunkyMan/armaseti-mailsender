@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
-import { Subject }    from 'rxjs/Subject';
 import * as IO from 'socket.io-client';
 
 
@@ -29,6 +27,13 @@ export class AppSocketService {
         this.socket.emit('data', data);
     }
 
+    getAllData(callback): any{
+        console.log('call on 33 in socket');
+            this.socket.emit('get-all-data', '', function (lists, templates) {
+                console.log('call on 35 in socket');
+                return callback(lists, templates);
+            });
+    }
     // Handle connection opening
     private connect() {
         console.log(`Connected to "${this.host}"`);

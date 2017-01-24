@@ -21,22 +21,6 @@ export class CampaignComponent implements OnInit {
             rate: Rate.MidHi[Rate.MidHi],
             subsCount: 1,
             checked: false
-        },
-        {
-            _id: '2',
-            name: 'Список контактов по запорной арматуре',
-            create: new Date,
-            rate: Rate.MidHi[Rate.MidHi],
-            subsCount: 10,
-            checked: false
-        },
-        {
-            _id: '3',
-            name: 'Список контактов по запорной арматуре',
-            create: new Date,
-            rate: Rate.MidHi[Rate.MidHi],
-            subsCount: 100,
-            checked: false
         }];
     templates: Templates[] = [
         {
@@ -49,20 +33,6 @@ export class CampaignComponent implements OnInit {
         {
             _id: 2,
             name: "Second template",
-            create: new Date,
-            lastUpdate: new Date,
-            checked: false,
-        },
-        {
-            _id: 3,
-            name: "Third template",
-            create: new Date,
-            lastUpdate: new Date,
-            checked: false,
-        },
-        {
-            _id: 4,
-            name: "Fourth template",
             create: new Date,
             lastUpdate: new Date,
             checked: false,
@@ -123,7 +93,20 @@ export class CampaignComponent implements OnInit {
         this.number = this.appSocketService.getLists();
     }
     ngOnInit(): void {
-        this.getLists();
+        console.log('call on 96');
+        this.getAllData();
     }
+
+    getAllData(){
+        console.log('call on 100');
+        let _this = this;
+        setTimeout(function () {
+        _this.appSocketService.getAllData((lists, temp) => {
+           _this.lists = lists;
+           _this.templates = temp;
+        });
+        }, 1000);
+    }
+
 }
 

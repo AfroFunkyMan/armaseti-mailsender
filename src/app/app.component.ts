@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppSocketService } from './app-socket.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  constructor(public appSocketService: AppSocketService){}
+
+
+
+
+
+  //todo connect socket in root component
+  //todo share socket to child component
+
+
+
   title = 'app works!';
 }
 

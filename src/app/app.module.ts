@@ -10,9 +10,11 @@ import { AppSocketService } from './app-socket.service';
 import { AppComponent } from './app.component';
 import { CampaignComponent } from './campaign/campaign.component';
 import { CampaignPipe } from './campaign/campaign.pipe';
+import { ListsComponent } from './lists/lists.component';
 
 const appRoutes: Routes = [
-  { path: '', component: CampaignComponent },
+  { path: '', component: ListsComponent },
+  { path: 'lists', component: CampaignComponent }
 ];
 
 
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CampaignComponent,
-    CampaignPipe
+    CampaignPipe,
+    ListsComponent
   ],
   imports: [
     BrowserModule,
