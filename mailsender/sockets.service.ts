@@ -3,14 +3,37 @@ import * as socket from 'socket.io';
 //import { ClientDatabaseService } from './database/lists.database';
 
 
-const io = socket(3001);
+const io = socket(2563);
 const emailSender = require('./email');
-
+let lists = [
+    {
+        _id: '1',
+        name: 'Список 1',
+        create: new Date,
+        rate: 3,
+        subsCount: 1,
+        checked: false
+    }];
+let templates = [
+    {
+        _id: 1,
+        name: "First template",
+        create: new Date,
+        lastUpdate: new Date,
+        checked: false,
+    }
+];
 io.on('connection', function (socket) {
 
     socket.on('data', function (data) {
         console.log(data);
+    });
+
+    socket.on('get-all-data', function (name,fn) {
+        console.log('call get all data event')
+        fn(lists, templates);
     })
+
 
     // //TODO get Lists
     // //TODO get List

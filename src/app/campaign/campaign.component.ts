@@ -77,7 +77,7 @@ export class CampaignComponent implements OnInit {
     }
 
     checkAndSendData(): void{
-        if (this.formData.lists.length === 0) return alert('Вы не выбрали списки!');
+        if (this.formData.lists.length === 0) return alert('Вы не выбрали!');
         if (this.formData.template === '') return alert('U not select Template!');
         if (this.formData.fields.companyName === '') return alert('U not input Company Name');
         if (this.formData.fields.fromEmail === '') return alert('U not select from Email!');

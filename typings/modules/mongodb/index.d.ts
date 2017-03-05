@@ -1164,7 +1164,7 @@ export interface ReplaceOneOptions {
 
 // http://mongodb.github.io/node-mongodb-native/2.1/api/Collection.html#~updateWriteOpResult
 export interface UpdateWriteOpResult {
-    result: { ok: number, n: number, nModified: number };
+    result: { ok: number, n: number, nModified: number, upserted?: any };
     connection: any;
     matchedCount: number;
     modifiedCount: number;
