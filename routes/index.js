@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 let MongoClient = require('mongodb').MongoClient;
 let ObjectID = require('mongodb').ObjectID;
-let db;
+let contacts;
 MongoClient.connect('mongodb://localhost:27017/mailsender', function (err, db) {
     console.log("Connected correctly to server");
-    db = db;
+    contacts = db.collection('contacts');
 });
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -25,7 +25,7 @@ function unsubThatID(id) {
         return null;
     }
     if (_id !== '') {
-        return db.collection('statistic').updateOne({"_id": _id},
+        contacts.updateOne({"_id": _id},
             {
                 $set: {
                     status: 'unsubscribe'
