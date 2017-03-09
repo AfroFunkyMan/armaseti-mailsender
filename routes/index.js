@@ -19,7 +19,6 @@ router.get('/unsubscribe/:id', function(req, res, next) {
 });
 
 
-
 router.get('/tracker/:contact/:campaign', function (req, res, next) {
     var contact = req.params.contact,
         campaign = req.params.campaign;
@@ -36,22 +35,22 @@ function saveOpenAction(contactID, campaignID) {
     try {
         let contactObjID = ObjectID(contactID);
         let campaignObjID = ObjectID(campaignID);
-    }
-    catch (err) {
-        console.log(err);
-    }
-    if (contactObjID !== '' && campaignObjID !== ''){
         campaigns.findOne({ _id: campaignObjID}, function (err, campaign) {
             if (campaign) {
                 contacts.updateOne({_id: contactObjID}, {
                     $push: {
-                        action: 'open',
-                        target: campaignObjID,
-                        timestamp: new Date()
+                        activities: {
+                            action: 'open',
+                            target: campaignObjID,
+                            timestamp: new Date()
+                        }
                     }
                 });
             }
         });
+    }
+    catch (err) {
+        console.log(err);
     }
 }
 
@@ -69,8 +68,10 @@ function unsubThatID(id) {
                     status: 'unsubscribe'
                 },
                 $push: {
-                    action: 'unsubscribe',
-                    timestamp: new Date()
+                    activities: {
+                        action: 'unsubscribe',
+                        timestamp: new Date()
+                    }
                 }
             }, function (err, resp) {
             return null;
