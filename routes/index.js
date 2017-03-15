@@ -13,8 +13,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/unsubscribe/:id', function(req, res, next) {
-    unsubThatID(req.params.id);
+router.get('/unsubscribe/:contact/:campaign', function(req, res, next) {
+    var contact = req.params.contact,
+        campaign = req.params.campaign;
+    unsubThatID(contact, campaign);
     res.render('unsubscribe', { title: 'Express' });
 });
 
@@ -55,14 +57,12 @@ function saveOpenAction(contactID, campaignID) {
 }
 
 function unsubThatID(id) {
-    let _id = '';
+    let contactObjID = '';
+    let campaignObjID = '';
     try {
-        _id = ObjectID(id);
-    } catch (err) {
-        return null;
-    }
-    if (_id !== '') {
-        contacts.updateOne({"_id": _id},
+        let contactObjID = ObjectID(contactID);
+        let campaignObjID = ObjectID(campaignID);
+        contacts.updateOne({"_id": contactObjID},
             {
                 $set: {
                     status: 'unsubscribe'
@@ -70,12 +70,15 @@ function unsubThatID(id) {
                 $push: {
                     activities: {
                         action: 'unsubscribe',
+                        target: campaignObjID,
                         timestamp: new Date()
                     }
                 }
             }, function (err, resp) {
-            return null;
-        });
+                return null;
+            });
+    } catch (err) {
+        return null;
     }
 }
 module.exports = router;
